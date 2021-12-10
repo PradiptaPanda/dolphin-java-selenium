@@ -1,0 +1,19 @@
+import java.util.concurrent.TimeUnit;
+
+public class Baseclass {
+	
+	WebDrive driver;
+	@BeforeClass
+	public void launch() {
+		driver=new FirefoxDriver();
+		driver.get("http://localhost:97/dolibarr/")
+		driver.manage().timeouts.implicitlyWait(30,TimeUnit.SECONDS)
+		
+	}
+	
+	@AfterClass
+	public void quit() {
+		driver.quit();
+	}
+
+}
